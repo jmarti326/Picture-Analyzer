@@ -54,6 +54,8 @@ namespace pictureAnalyzer
 				{
 					MyLabel.Text = ex.Message;
 				}
+
+                MyActivityIndicator.IsRunning = false;
 			}
         }
 
