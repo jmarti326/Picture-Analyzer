@@ -18,8 +18,8 @@ namespace pictureAnalyzer
         private async Task<AnalysisResult> GetImageDescription(Stream imageStream)
         {
             VisionServiceClient visionClient = new VisionServiceClient(
-                "ee8f52426e87468cbff5ab0f4c19bc8f", 
-                "https://eastus2.api.cognitive.microsoft.com/vision/v1.0");
+                "Here goes Vision API Key", 
+                "Here goes the Vision API Endpoint");
 
             VisualFeature[] features = { VisualFeature.Tags };
 
