@@ -25,5 +25,36 @@ namespace pictureAnalyzer
 
             return await visionClient.AnalyzeImageAsync(imageStream, features.ToList(), null);
         }
+
+		private async Task SelectPicture()
+		{
+			if (CrossMedia.Current.IsPickPhotoSupported)
+			{
+				var image = await CrossMedia.Current.PickPhotoAsync();
+
+				MyImage.Source = ImageSource.FromStream(() =>
+				{
+					return image.GetStream();
+				});
+
+				MyActivityIndicator.IsRunning = true;
+
+				try
+				{
+					var result = await GetImageDescription(image.GetStream());
+
+					MyLabel.Text = "";
+
+					foreach (var tag in result.Tags)
+					{
+						MyLabel.Text += tag.Name + "\n";
+					}
+				}
+				catch (ClientException ex)
+				{
+					MyLabel.Text = ex.Message;
+				}
+			}
+		}
     }
 }
