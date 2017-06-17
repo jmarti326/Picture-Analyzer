@@ -1,4 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:pictureAnalyzer" x:Class="pictureAnalyzer.pictureAnalyzerPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="MyImage" Grid.Row="0" Margin="24"/>
+            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="1"/>
+            <ScrollView Grid.Row="2">
+                <Label x:Name="MyLabel" FontSize="20"/>
+            </ScrollView>
+            <Button x:Name="MyButton" Grid.Row="3" Text="Select a Picutre"/>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
