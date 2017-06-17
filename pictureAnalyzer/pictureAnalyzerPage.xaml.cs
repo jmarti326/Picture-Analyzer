@@ -55,6 +55,11 @@ namespace pictureAnalyzer
 					MyLabel.Text = ex.Message;
 				}
 			}
-		}
+        }
+
+        async void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            await SelectPicture();
+        }
     }
 }

@@ -14,7 +14,7 @@
             <ScrollView Grid.Row="2">
                 <Label x:Name="MyLabel" FontSize="20"/>
             </ScrollView>
-            <Button x:Name="MyButton" Grid.Row="3" Text="Select a Picutre"/>
+            <Button x:Name="MyButton" Grid.Row="3" Text="Select a Picutre" Clicked="Handle_Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
