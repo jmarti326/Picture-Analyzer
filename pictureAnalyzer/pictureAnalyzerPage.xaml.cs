@@ -19,7 +19,7 @@ namespace pictureAnalyzer
         private async Task<AnalysisResult> GetImageDescription(Stream imageStream)
         {
             VisionServiceClient visionClient = new VisionServiceClient(
-                "4b3b5c6acb3547079b4f830d8a8626b4", 
+                "f452c8edb41e455a852472aeb046a56f", 
                 "https://eastus2.api.cognitive.microsoft.com/vision/v1.0");
 
             VisualFeature[] features = { VisualFeature.Tags };
@@ -31,7 +31,10 @@ namespace pictureAnalyzer
 		{
 			if (CrossMedia.Current.IsPickPhotoSupported)
 			{
-                var image = await CrossMedia.Current.PickPhotoAsync();
+                PickMediaOptions option = new PickMediaOptions();
+                option.CompressionQuality = 50;
+
+                var image = await CrossMedia.Current.PickPhotoAsync(option);
 
 				MyImage.Source = ImageSource.FromStream(() =>
 				{
@@ -53,7 +56,7 @@ namespace pictureAnalyzer
 				}
 				catch (ClientException ex)
 				{
-					MyLabel.Text = ex.Message;
+                    MyLabel.Text = ex.Error.Message;
 				}
 
                 MyActivityIndicator.IsRunning = false;

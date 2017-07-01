@@ -6,13 +6,12 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
-                <RowDefinition/>
+                <RowDefinition />
             </Grid.RowDefinitions>
-
-            <Image x:Name="MyImage" Grid.Row="0" Margin="24" />
-            <Button x:Name="MyButton" Grid.Row="0" Text="Select a Picutre" Clicked="Handle_Clicked" />
-            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="1" />
-            <ScrollView Grid.Row="2">
+            <Image x:Name="MyImage" Grid.Row="0" Margin="24" BackgroundColor="Yellow" />
+            <Button x:Name="MyButton" Grid.Row="1" Text="Select a Picutre" Clicked="Handle_Clicked" />
+            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="2" />
+            <ScrollView Grid.Row="3" BackgroundColor="Silver">
                 <Label x:Name="MyLabel" FontSize="20" />
             </ScrollView>
         </Grid>
