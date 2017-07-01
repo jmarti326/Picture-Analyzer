@@ -3,18 +3,18 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Image x:Name="MyImage" Grid.Row="0" Margin="24"/>
-            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="1"/>
+            <Image x:Name="MyImage" Grid.Row="0" Margin="24" />
+            <Button x:Name="MyButton" Grid.Row="0" Text="Select a Picutre" Clicked="Handle_Clicked" />
+            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="1" />
             <ScrollView Grid.Row="2">
-                <Label x:Name="MyLabel" FontSize="20"/>
+                <Label x:Name="MyLabel" FontSize="20" />
             </ScrollView>
-            <Button x:Name="MyButton" Grid.Row="3" Text="Select a Picutre" Clicked="Handle_Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
