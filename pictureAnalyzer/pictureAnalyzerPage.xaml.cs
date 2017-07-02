@@ -46,12 +46,8 @@ namespace pictureAnalyzer
                     {
                         var result = await GetImageDescription(image.GetStream());
 
-                        MyLabel.Text = "";
-
-                        foreach (var tag in result.Tags)
-                        {
-                            MyLabel.Text += tag.Name + "\n";
-                        }
+                        MyLabel.Text = result.Tags.Select(x => x.Name)
+                                                  .Aggregate((a, b) => $"{a}\n{b}");
                     }
                     catch (ClientException ex)
                     {
